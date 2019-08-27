@@ -3,24 +3,64 @@ var app = app || {};
 
 app.Animation = (function () {
 
-	var banner = document.getElementById('banner');
+	
 	var t = TweenMax;
+	var tl1 = new TimelineMax();
+	var tl2 = new TimelineMax({paused:true});
+	var banner = document.getElementById('banner');
+	var txt1a = document.getElementById('txt1a');
+	var txt1b = document.getElementById('txt1b');
+	var txt2a = document.getElementById('txt2a');
+	var txt2b = document.getElementById('txt2b');
+	var txt3a = document.getElementById('txt3a');
+	var txt3b = document.getElementById('txt3b');
+	var txt4a = document.getElementById('txt4a');
+	var txt4b = document.getElementById('txt4b');
+	var txt5 = document.getElementById('txt5');
+	
+	var cta = document.getElementById('cta');
+	var curtain = document.getElementById('curtain');
+	
 
 	// --------------------------------------------------------------------------------------
 	// set default properties
 	function initialize() {
 		// DO NOT EDIT: reveals banner once loaded
 		t.set(banner, {opacity:1});
-
-		t.set("#title", {scale:0});
-		t.set("#caption", {scale:0});
+		t.set(cta, {transformOrigin: "50% 70%"});
 	}
 
 	// --------------------------------------------------------------------------------------
 	// Starts the animation
 	function start() {
-		t.to("#title", 1, {scale:1, ease:Cubic.easeInOut});
-		t.to("#caption", 1, {scale:1, ease:Cubic.easeInOut});
+
+		tl1.to(txt1a, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
+		.to(txt1b, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
+
+		.to(txt1a, .5, {opacity: 0}, "+=2")
+		.to(txt1b, .5, {opacity: 0}, "-=.5")
+
+		.to(txt2a, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
+		.to(txt2b, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
+
+		.to(txt2a, .5, {opacity: 0}, "+=2")
+		.to(txt2b, .5, {opacity: 0}, "-=.5")
+
+		.to(txt3a, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
+		.to(txt3b, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
+
+		.to(txt3a, .5, {opacity: 0}, "+=2")
+		.to(txt3b, .5, {opacity: 0}, "-=.5")
+
+		.to(txt4a, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
+		.to(txt4b, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
+
+		.to(curtain, .75, {opacity: 1, onComplete: function () {tl2.play();}}, "+=2")
+
+		.to(txt5, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
+
+		.from(cta, 1, {scale: 0, opacity: 0, ease: Elastic.easeInOut}, "-=.25");
+		
 	}
 
 	// --------------------------------------------------------------------------------------

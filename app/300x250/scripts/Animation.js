@@ -28,6 +28,7 @@ app.Animation = (function () {
 		// DO NOT EDIT: reveals banner once loaded
 		t.set(banner, {opacity:1});
 		t.set(cta, {transformOrigin: "50% 70%"});
+		t.set(txt5, {x:"-=5"});
 	}
 
 	// --------------------------------------------------------------------------------------
@@ -37,29 +38,29 @@ app.Animation = (function () {
 		tl1.to(txt1a, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 		.to(txt1b, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 
-		.to(txt1a, .5, {opacity: 0}, "+=2")
+		.to(txt1a, .5, {opacity: 0}, "+=1.5")
 		.to(txt1b, .5, {opacity: 0}, "-=.5")
 
 		.to(txt2a, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 		.to(txt2b, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 
-		.to(txt2a, .5, {opacity: 0}, "+=2")
+		.to(txt2a, .5, {opacity: 0}, "+=1.5")
 		.to(txt2b, .5, {opacity: 0}, "-=.5")
 
 		.to(txt3a, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 		.to(txt3b, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 
-		.to(txt3a, .5, {opacity: 0}, "+=2")
+		.to(txt3a, .5, {opacity: 0}, "+=1.5")
 		.to(txt3b, .5, {opacity: 0}, "-=.5")
 
 		.to(txt4a, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 		.to(txt4b, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 
-		.to(curtain, .75, {opacity: 1, onComplete: function () {tl2.play();}}, "+=2")
+		.to(curtain, .75, {opacity: 1, onComplete: function () {tl2.play();}}, "+=1.5")
 
 		.to(txt5, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 
-		.from(cta, 1, {scale: 0, opacity: 0, ease: Elastic.easeInOut}, "-=.25");
+		.from(cta, .5, {scale: 0, opacity: 0, ease: Sine.easeInOut}, "-=.25");
 		
 	}
 

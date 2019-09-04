@@ -30,8 +30,9 @@ app.Animation = (function () {
 	function initialize() {
 		// DO NOT EDIT: reveals banner once loaded
 		t.set(banner, {opacity:1});
-		t.set(cta, {transformOrigin: "50% 70%"});
-		// t.set(txt5, {x:"-=5"});
+		t.set(cta, {y:"-=5", transformOrigin: "50% 70%"});
+		t.set(txt5, {x:"-=5"});
+		t.set(txt6, {y:"-=5"});
 	}
 
 	// --------------------------------------------------------------------------------------

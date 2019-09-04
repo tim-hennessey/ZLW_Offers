@@ -17,9 +17,12 @@ app.Animation = (function () {
 	var txt4a = document.getElementById('txt4a');
 	var txt4b = document.getElementById('txt4b');
 	var txt5 = document.getElementById('txt5');
+	var txt6 = document.getElementById('txt6');
 	
 	var cta = document.getElementById('cta');
 	var curtain = document.getElementById('curtain');
+
+	var resolve = document.getElementsByClassName("resolve");
 	
 
 	// --------------------------------------------------------------------------------------
@@ -28,7 +31,7 @@ app.Animation = (function () {
 		// DO NOT EDIT: reveals banner once loaded
 		t.set(banner, {opacity:1});
 		t.set(cta, {transformOrigin: "50% 70%"});
-		t.set(txt5, {x:"-=5"});
+		// t.set(txt5, {x:"-=5"});
 	}
 
 	// --------------------------------------------------------------------------------------
@@ -58,9 +61,13 @@ app.Animation = (function () {
 
 		.to(curtain, .75, {opacity: 1, onComplete: function () {tl2.play();}}, "+=1.5")
 
-		.to(txt5, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
+		.set(resolve, {display: "block"})
 
-		.from(cta, .5, {scale: 0, opacity: 0, ease: Sine.easeInOut}, "-=.25");
+		.from(txt5, .5, {y:"-=10", opacity: 0, ease: Sine.easeInOut})
+
+		.from(txt6, .5, {y:"-=10", opacity: 0, ease: Sine.easeInOut})
+
+		.from(cta, .5, {y:"-=10", scale: 0, opacity: 0, ease: Sine.easeInOut}, "-=.25");
 		
 	}
 

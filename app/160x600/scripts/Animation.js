@@ -8,14 +8,25 @@ app.Animation = (function () {
 	var tl1 = new TimelineMax();
 	var tl2 = new TimelineMax({paused:true});
 	var banner = document.getElementById('banner');
+
 	var txt1a = document.getElementById('txt1a');
 	var txt1b = document.getElementById('txt1b');
+	var txt1c = document.getElementById('txt1c');
+
 	var txt2a = document.getElementById('txt2a');
 	var txt2b = document.getElementById('txt2b');
+	var txt2c = document.getElementById('txt2c');
+	var txt2d = document.getElementById('txt2d');
+
 	var txt3a = document.getElementById('txt3a');
 	var txt3b = document.getElementById('txt3b');
+	var txt3c = document.getElementById('txt3c');
+	var txt3d = document.getElementById('txt3d');
+
 	var txt4a = document.getElementById('txt4a');
 	var txt4b = document.getElementById('txt4b');
+	var txt4c = document.getElementById('txt4c');
+
 	var txt5 = document.getElementById('txt5');
 	var txt6 = document.getElementById('txt6');
 	
@@ -42,39 +53,50 @@ app.Animation = (function () {
 
 		tl1.to(txt1a, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 		.to(txt1b, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
+		.to(txt1c, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 
 		.to(txt1a, .5, {opacity: 0}, "+=1.5")
 		.to(txt1b, .5, {opacity: 0}, "-=.5")
+		.to(txt1c, .5, {opacity: 0}, "-=.5")
 
 		.to(txt2a, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 		.to(txt2b, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
+		.to(txt2c, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
+		.to(txt2d, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 
 		.to(txt2a, .5, {opacity: 0}, "+=1.5")
 		.to(txt2b, .5, {opacity: 0}, "-=.5")
+		.to(txt2c, .5, {opacity: 0}, "-=.5")
+		.to(txt2d, .5, {opacity: 0}, "-=.5")
 
 		.to(txt3a, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 		.to(txt3b, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
+		.to(txt3c, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
+		.to(txt3d, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 
 		.to(txt3a, .5, {opacity: 0}, "+=1.5")
 		.to(txt3b, .5, {opacity: 0}, "-=.5")
+		.to(txt3c, .5, {opacity: 0}, "-=.5")
+		.to(txt3d, .5, {opacity: 0}, "-=.5")
 
 		.to(txt4a, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 		.to(txt4b, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
+		.to(txt4c, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 
-		.to(curtain, .75, {opacity: 1, onComplete: function () {tl2.play();}}, "+=1.5")
+		.to(curtain, .75, {opacity: 1}, "+=1.5")
 
 		.set(resolve, {display: "block"})
 
 		.from(txt5, .5, {y:"-=10", opacity: 0, ease: Sine.easeInOut})
 
-		.from(txt6, .5, {y:"-=10", opacity: 0, ease: Sine.easeInOut, onComplete: function () {tl2.play();}})
+		.from(txt6, .5, {y:"-=10", opacity: 0, ease: Sine.easeInOut})
+		.from(container, .5, {y:"-=10", opacity: 0, ease: Sine.easeInOut, onComplete: function () {tl2.play();}}, "-=.5")
 
 		.from(cta, .5, {y:"-=10", scale: 0, opacity: 0, ease: Sine.easeInOut}, "-=.25");
 
 
 		tl2.to(flag, 0.1, {display: "block"})
-		.from(container, .5, {y:"-=10", opacity: 0, ease: Sine.easeInOut})
-		.to(sprite, 1, {x: -468, ease: SteppedEase.config(18)}, "-=.25");
+		.to(sprite, 1, {x: -684, ease: SteppedEase.config(18)}, "-=.25");
 		
 	}
 

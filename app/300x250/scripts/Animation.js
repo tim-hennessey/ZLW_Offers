@@ -67,13 +67,15 @@ app.Animation = (function () {
 
 		.from(txt5, .5, {y:"-=10", opacity: 0, ease: Sine.easeInOut})
 
-		.from(txt6, .5, {y:"-=10", opacity: 0, ease: Sine.easeInOut, onComplete: function () {tl2.play();}})
+		.from(container, .5, {y:"-=10", opacity: 0, ease: Sine.easeInOut}, "-=.5")
+
+		.from(txt6, .5, {y:"-=10", opacity: 0, ease: Sine.easeInOut, onComplete: function () {tl2.play();}}, "-=.5")
 
 		.from(cta, .5, {y:"-=10", scale: 0, opacity: 0, ease: Sine.easeInOut}, "-=.25");
 
 
 		tl2.to(flag, 0.1, {display: "block"})
-		.from(container, .5, {y:"-=10", opacity: 0, ease: Sine.easeInOut})
+		
 		.to(sprite, 1, {x: -468, ease: SteppedEase.config(18)}, "-=.25");
 		
 	}

@@ -42,7 +42,7 @@ app.Animation = (function () {
 	function initialize() {
 		// DO NOT EDIT: reveals banner once loaded
 		t.set(banner, {opacity:1});
-		t.set(cta, {transformOrigin: "50% 70%"});
+		t.set(cta, {transformOrigin: "80% 50%"});
 		// t.set(txt5, {x:"-=5"});
 		// t.set(txt6, {y:"-=5"});
 	}
@@ -87,10 +87,10 @@ app.Animation = (function () {
 
 		.set(resolve, {display: "block"})
 
-		.from(txt5, .5, {y:"-=10", opacity: 0, ease: Sine.easeInOut})
+		.from(txt5, .5, {y:"-=10", opacity: 0, ease: Sine.easeInOut, onComplete: function () {tl2.play();}})
 
 		.from(txt6, .5, {y:"-=10", opacity: 0, ease: Sine.easeInOut})
-		.from(container, .5, {y:"-=10", opacity: 0, ease: Sine.easeInOut, onComplete: function () {tl2.play();}}, "-=.5")
+		.from(container, .5, {y:"-=10", opacity: 0, ease: Sine.easeInOut}, "-=.5")
 
 		.from(cta, .5, {y:"-=10", scale: 0, opacity: 0, ease: Sine.easeInOut}, "-=.25");
 

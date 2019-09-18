@@ -31,9 +31,10 @@ app.Animation = (function () {
 	function initialize() {
 		// DO NOT EDIT: reveals banner once loaded
 		t.set(banner, {opacity:1});
-		t.set(cta, {y:"-=5", transformOrigin: "50% 70%"});
+		t.set(cta, {y:"-=5", transformOrigin: "50% 80%"});
 		t.set(txt5, {x:"-=5"});
 		t.set(txt6, {y:"-=5"});
+		t.set(container, {scale:.5});
 	}
 
 	// --------------------------------------------------------------------------------------
@@ -49,34 +50,30 @@ app.Animation = (function () {
 		.to(txt2a, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 		.to(txt2b, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 
-		.to(txt2a, .5, {opacity: 0}, "+=1.5")
-		.to(txt2b, .5, {opacity: 0}, "-=.5")
+		.to(txt2b, .5, {opacity: 0}, "+=1.5")
 
-		.to(txt3a, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 		.to(txt3b, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 
-		.to(txt3a, .5, {opacity: 0}, "+=1.5")
-		.to(txt3b, .5, {opacity: 0}, "-=.5")
+		.to(txt3b, .5, {opacity: 0}, "+=1.5")
 
-		.to(txt4a, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 		.to(txt4b, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 
 		.to(curtain, .75, {opacity: 1, onComplete: function () {tl2.play();}}, "+=1.5")
 
 		.set(resolve, {display: "block"})
 
-		.from(txt5, .5, {y:"-=10", opacity: 0, ease: Sine.easeInOut})
+		.from(txt5, .5, {y:"-=10", opacity: 0, ease: Sine.easeInOut, onComplete: function () {tl2.play();}})
 
-		.from(container, .5, {y:"-=10", opacity: 0, ease: Sine.easeInOut}, "-=.5")
+		.from(container, .5, {y:"-=10", opacity: 0, ease: Sine.easeInOut})
 
-		.from(txt6, .5, {y:"-=10", opacity: 0, ease: Sine.easeInOut, onComplete: function () {tl2.play();}}, "-=.5")
+		.from(txt6, .5, {y:"-=10", opacity: 0, ease: Sine.easeInOut}, "-=.5")
 
 		.from(cta, .5, {y:"-=10", scale: 0, opacity: 0, ease: Sine.easeInOut}, "-=.25");
 
 
 		tl2.to(flag, 0.1, {display: "block"})
 		
-		.to(sprite, 1, {x: -468, ease: SteppedEase.config(18)}, "-=.25");
+		.to(sprite, 1, {x: -954, ease: SteppedEase.config(18)}, "+=.5");
 		
 	}
 

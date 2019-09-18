@@ -43,6 +43,7 @@ app.Animation = (function () {
 		// DO NOT EDIT: reveals banner once loaded
 		t.set(banner, {opacity:1});
 		t.set(cta, {transformOrigin: "80% 50%"});
+		t.set(container, {scale:.5});
 		// t.set(txt5, {x:"-=5"});
 		// t.set(txt6, {y:"-=5"});
 	}
@@ -53,35 +54,20 @@ app.Animation = (function () {
 
 		tl1.to(txt1a, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 		.to(txt1b, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
-		.to(txt1c, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 
 		.to(txt1a, .5, {opacity: 0}, "+=1.5")
 		.to(txt1b, .5, {opacity: 0}, "-=.5")
-		.to(txt1c, .5, {opacity: 0}, "-=.5")
 
 		.to(txt2a, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 		.to(txt2b, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
-		.to(txt2c, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
-		.to(txt2d, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 
-		.to(txt2a, .5, {opacity: 0}, "+=1.5")
-		.to(txt2b, .5, {opacity: 0}, "-=.5")
-		.to(txt2c, .5, {opacity: 0}, "-=.5")
-		.to(txt2d, .5, {opacity: 0}, "-=.5")
+		.to(txt2b, .5, {opacity: 0}, "+=1.5")
 
-		.to(txt3a, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 		.to(txt3b, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
-		.to(txt3c, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
-		.to(txt3d, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 
-		.to(txt3a, .5, {opacity: 0}, "+=1.5")
-		.to(txt3b, .5, {opacity: 0}, "-=.5")
-		.to(txt3c, .5, {opacity: 0}, "-=.5")
-		.to(txt3d, .5, {opacity: 0}, "-=.5")
+		.to(txt3b, .5, {opacity: 0}, "+=1.5")
 
-		.to(txt4a, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 		.to(txt4b, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
-		.to(txt4c, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 
 		.to(curtain, .75, {opacity: 1}, "+=1.5")
 
@@ -96,7 +82,7 @@ app.Animation = (function () {
 
 
 		tl2.to(flag, 0.1, {display: "block"})
-		.to(sprite, 1, {x: -468, ease: SteppedEase.config(18)}, "-=.25");
+		.to(sprite, 1, {x: -918, ease: SteppedEase.config(18)}, "-=.25");
 		
 	}
 

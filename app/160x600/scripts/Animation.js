@@ -42,9 +42,10 @@ app.Animation = (function () {
 	function initialize() {
 		// DO NOT EDIT: reveals banner once loaded
 		t.set(banner, {opacity:1});
-		t.set(cta, {y:"-=5", transformOrigin: "50% 70%"});
+		t.set(cta, {y:"-=5", transformOrigin: "50% 65%"});
 		t.set(txt5, {x:"-=5"});
 		t.set(txt6, {y:"-=5"});
+		t.set(container, {scale:.5});
 	}
 
 	// --------------------------------------------------------------------------------------
@@ -64,23 +65,23 @@ app.Animation = (function () {
 		.to(txt2c, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 		.to(txt2d, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 
-		.to(txt2a, .5, {opacity: 0}, "+=1.5")
-		.to(txt2b, .5, {opacity: 0}, "-=.5")
-		.to(txt2c, .5, {opacity: 0}, "-=.5")
+		// .to(txt2a, .5, {opacity: 0}, "+=1.5")
+		// .to(txt2b, .5, {opacity: 0}, "-=.5")
+		.to(txt2c, .5, {opacity: 0}, "+=1.5")
 		.to(txt2d, .5, {opacity: 0}, "-=.5")
 
-		.to(txt3a, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
-		.to(txt3b, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
+		// .to(txt3a, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
+		// .to(txt3b, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 		.to(txt3c, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 		.to(txt3d, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 
-		.to(txt3a, .5, {opacity: 0}, "+=1.5")
-		.to(txt3b, .5, {opacity: 0}, "-=.5")
-		.to(txt3c, .5, {opacity: 0}, "-=.5")
+		// .to(txt3a, .5, {opacity: 0}, "+=1.5")
+		// .to(txt3b, .5, {opacity: 0}, "-=.5")
+		.to(txt3c, .5, {opacity: 0}, "+=1.5")
 		.to(txt3d, .5, {opacity: 0}, "-=.5")
 
-		.to(txt4a, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
-		.to(txt4b, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
+		// .to(txt4a, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
+		// .to(txt4b, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 		.to(txt4c, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 
 		.to(curtain, .75, {opacity: 1}, "+=1.5")
@@ -96,7 +97,7 @@ app.Animation = (function () {
 
 
 		tl2.to(flag, 0.1, {display: "block"})
-		.to(sprite, 1, {x: -684, ease: SteppedEase.config(18)}, "-=.25");
+		.to(sprite, 1, {x: -1386, ease: SteppedEase.config(18)}, "-=.25");
 		
 	}
 
